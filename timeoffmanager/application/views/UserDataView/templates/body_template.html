@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+    <div class="login">
+        <div class="heading"> 
+            <h2>Additional information</h2>
+            <br>
+            <br>
+            <form name="LoginForm" action="../UserData/SaveData" method="post" onSubmit="return checkForm()">
+                
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input id="yearOfBirth" name="year_of_birth" type="text" class="form-control" placeholder="Please adjust the year of birth">
+            </div>    
+            <br>
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input id="usedDays" name="used_days" type="text" class="form-control" placeholder="Please adjust the used days">
+            </div>             
+            <br>
+            <br>    
+            <div>                
+                <select id="numberOfChildrenComboBox" name="children_num">
+                   <option> </option>
+                   <option value="0">None</option>
+                   <option value="1">1</option>
+                   <option value="2">2</option>
+                   <option value="3">3 or more</option>
+                 </select>   
+            </div>
+            <br>
+            <br>  
+            <div>
+                {managerComboBox}
+            </div>              
+            <br>
+            <br>                   
+            <div id="colorSelectorBackground" class="input-group input-group-lg">
+                <div style="background-color: #333333; width:46px; height:46px; border: 2px solid #000000; border-radius: 5px;"></div>          
+                <span class="input-group-addon" ></span>
+                <input type="hidden" id="colorBackground" name="background" value="#333333">
+                <input id="colorBackgroundText" class="form-control" placeholder="Please choose background color">                
+            </div>     
+            <br>               
+            <div id="colorSelectorForeground" class="input-group input-group-lg">
+                <div style="background-color: #F6F6F6; width:46px; height:46px; border: 2px solid #000000; border-radius: 5px;"></div>          
+                <span class="input-group-addon" ></span>
+                <input type="hidden" id="colorForeground" name="foreground" value="#F6F6F6">
+                <input id="colorForegroundText" class="form-control" placeholder="Please choose foreground color">                
+            </div>  
+            <div id="warningDialog" title="Warning"></div>            
+            <br>
+            <br>
+                <button type="submit" class="float">Next</button> 
+            </form>
+       </div>        
+    </div>
+
+<script type="text/javascript">
+$(document).ready(function()
+{	
+    InitMessageDialogs();
+    $("#numberOfChildrenComboBox").chosen
+    ({
+        placeholder_text_single: "Please adjust the number of children",
+        width: "470px"
+    });
+    $("#managerComboBox").chosen({
+        placeholder_text_single: "Please choose manager",
+        width: "470px"
+    });
+    
+    $("#colorSelectorBackground").ColorPicker({
+        color: "#333333",
+        onShow: function (colpkr) {
+                $(colpkr).css("z-index","10000");
+                $(colpkr).fadeIn(500);
+                return false;
+        },
+        onHide: function (colpkr) {
+                $(colpkr).fadeOut(500);
+                return false;
+        },
+        onChange: function (hsb, hex, rgb) {
+                $("#colorSelectorBackground div").css("backgroundColor", "#" + hex);
+                $("#colorBackground").val("#" + hex);
+        }
+    });
+    //$("#colorBackground").val("#1040b0");		
+    $("#colorSelectorForeground").ColorPicker({
+        color: "#ffffff",
+        onShow: function (colpkr) {
+                $(colpkr).css("z-index","10000");
+                $(colpkr).fadeIn(500);
+                return false;
+        },
+        onHide: function (colpkr) {
+                $(colpkr).fadeOut(500);
+                return false;
+        },
+        onChange: function (hsb, hex, rgb) {
+                $("#colorSelectorForeground div").css("backgroundColor", "#" + hex);
+                $("#colorForeground").val("#" + hex);
+        }
+    });    
+});
+
+function checkForm()
+{    
+    if ($("#yearOfBirth").val() == "")
+    {
+        $("#warningDialog").html("Please define the year of birth.");
+        $('#warningDialog').dialog('open');
+        return false;
+    }
+    else if ($("#usedDays").val() == "")
+    {
+        $("#warningDialog").html("Please define the number of used days at previous workplace.");
+        $('#warningDialog').dialog('open');
+        return false;
+    }   
+    else if ($("#numberOfChildrenComboBox").val() == "")
+    {
+        $("#warningDialog").html("Please define the number of children.");
+        $('#warningDialog').dialog('open');
+        return false;
+    }  
+    else if ($("#managerComboBox").val() == "")
+    {
+        $("#warningDialog").html("Please choose a manager.");
+        $('#warningDialog').dialog('open');
+        return false;
+    }    
+    return true;
+}
+
+function signOut() {
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(function () {
+    console.log('User signed out.');
+  });
+}
+</script>

@@ -1,0 +1,33 @@
+<script type="text/javascript">
+$(document).ready(function()
+{	
+    $("#tabs").tabs( {
+        "show": function(event, ui) 
+        {
+            var oTable = $('div.dataTables_scrollBody>table.display', ui.panel).dataTable();
+            if ( oTable.length > 0 ) {
+                    oTable.fnAdjustColumnSizing();
+            }
+        }
+    });
+    
+    $("#[id*=myTable]").dataTable(
+    {
+        "bInfo": false,
+        "bPaginate": false       
+    });    
+});
+</script>
+
+<div id="demo">
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">Required day offs</a></li>
+            <li><a href="#tabs-2">Approved day offs</a></li>
+            <li><a href="#tabs-3">Rejected day offs</a></li>
+            <li><a href="#tabs-4">Pending day offs</a></li>
+            <li><a href="#tabs-5">Expired day offs</a></li>
+        </ul>
+
+        <div id="tabs-1"> 
+            <table id="myTable1" class="table table-striped table-bordered" cellspacing="0" width="100%">

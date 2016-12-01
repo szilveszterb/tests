@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/PHP%20OOP/TimeOffManager/application/controllers/helpers/CDatabase.php</file>
+            <file>file:/D:/PHP%20OOP/TimeOffManager/application/models/CUser.php</file>
+            <file>file:/D:/PHP%20OOP/TimeOffManager/application/controllers/helpers/CTemplate.php</file>
+            <file>file:/D:/PHP%20OOP/TimeOffManager/application/views/CalendarView/CalendarTableDisplay.php</file>
+            <file>file:/D:/PHP%20OOP/TimeOffManager/application/controllers/Calendar.php</file>
+            <file>file:/D:/PHP%20OOP/TimeOffManager/application/models/CUserOperator.php</file>
+            <file>file:/D:/PHP%20OOP/TimeOffManager/application/models/CHolidays.php</file>
+            <file>file:/D:/PHP%20OOP/TimeOffManager/application/models/CUserManager.php</file>
+            <file>file:/D:/PHP%20OOP/TimeOffManager/application/views/CalendarView/scripts/calendar.js</file>
+            <file>file:/D:/PHP%20OOP/TimeOffManager/application/controllers/Login.php</file>
+            <file>file:/D:/PHP%20OOP/TimeOffManager/application/controllers/UserData.php</file>
+        </group>
+        <group name="ProdFWorkGroup">
+            <file>file:/D:/Munka/TimeOffManager/application/models/CUserOperator.php</file>
+            <file>file:/D:/Munka/TimeOffManager/application/models/CUserManagerWrapper.php</file>
+            <file>file:/D:/Munka/TimeOffManager/application/views/CalendarView/scripts/calendar.js</file>
+            <file>file:/D:/Munka/TimeOffManager/application/views/CalendarView/CalendarDisplay.php</file>
+            <file>file:/D:/Munka/TimeOffManager/application/views/UserDataView/UserDataDisplay.php</file>
+            <file>file:/D:/Munka/TimeOffManager/application/views/CalendarView/templates/body_template.html</file>
+            <file>file:/D:/Munka/TimeOffManager/application/models/CHolidays.php</file>
+            <file>file:/D:/Munka/TimeOffManager/application/models/CUserGuestWrapper.php</file>
+            <file>file:/D:/Munka/TimeOffManager/application/controllers/Login.php</file>
+        </group>
+    </open-files>
+</project-private>
